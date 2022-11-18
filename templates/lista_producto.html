@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block titulo  %}
+    lista de Productos
+
+{% endblock %}
+{% block contenido %}
+    <h1>lista de Productos</h1>
+    {% for p in lista %}
+        <p>
+            Nombre: {{ p.nombre }}
+            Precio: {{ p.precio }}
+            Stock: {{ p.stock }}
+            Marca: {{ p.marca }}
+            {% if  p.foto  %}
+                <img src="/media/{{  p.foto  }}">
+            
+            {% endif %}
+        </p>
+    {% endfor %}
+{% endblock %}
